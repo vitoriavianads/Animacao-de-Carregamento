@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:antiquewhite; /* Cor de fundo cinza claro */
+}
+
+.loader-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid #000000; /* Cor azul */
+  border-top: 4px solid transparent; /* Transparência no topo para um efeito suave */
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333; /* Cor de texto preto */
+}
+label {
+  cursor: default;
+  font-size: 20px;
+
+}
+
+@keyframes spin {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0); }
+}
+
+header {
+  background-color:maroon; /* Cor de fundo azul */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #fff; /* Cor de texto branco */
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff6f61; /* Cor de botão laranja */
+  color: #fff; /* Cor de texto branco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4f3f; /* Cor de botão laranja mais escura quando hover */
+}
+
+main {
+  padding: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 600px;
+  color: #333; /* Cor de texto preto */
+}
+
+#dynamicText.changed {
+  color: #27ae60; /* Cor de texto verde quando alterado */
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size: 24px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  p {
+      font-size: 16px;
+  }
+
+  .loader {
+      width: 30px;
+      height: 30px;
+  }
+
+  .loader-text {
+      font-size: 14px;
+  }
+}
+
+/* Mostrar o conteúdo após o clique */
+#toggle:checked ~ .loader-container {
+  display: flex;
+}
